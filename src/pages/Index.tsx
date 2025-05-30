@@ -1,14 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import MainAppLayout from '../components/layout/MainAppLayout';
+import LoginForm from '../components/Login/LoginForm';
 
-const Index = () => {
+/**
+ * LoginPage serves as the main entry point for the login screen.
+ * It utilizes MainAppLayout to provide the overall page structure (centered content on a full-screen background)
+ * and embeds the LoginForm component, which contains the actual form fields and logic.
+ */
+const LoginPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <MainAppLayout title="Log In - Login Page UI"> 
+      {/* 
+        The MainAppLayout handles the overall page centering and background color.
+        The LoginForm component is passed as children. It is responsible for its own
+        card-like appearance (background, padding, shadow, width) and form elements.
+        This composition aligns with the project's component hierarchy and layout requirements.
+      */}
+      <LoginForm />
+    </MainAppLayout>
   );
 };
 
-export default Index;
+export default LoginPage;
